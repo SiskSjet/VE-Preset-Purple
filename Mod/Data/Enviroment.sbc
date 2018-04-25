@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Definitions 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Definition xsi:type="EnvironmentDefinition">
+    <Id>
+      <TypeId>EnvironmentDefinition</TypeId>
+      <SubtypeId>Default</SubtypeId>
+    </Id>
+
+    <PlanetProperties>
+      <AtmosphereIntensityMultiplier>4.6</AtmosphereIntensityMultiplier>
+      <CloudsIntensityMultiplier>5.2</CloudsIntensityMultiplier>
+    </PlanetProperties>
+
+    <SunProperties>
+      <SunIntensity>40</SunIntensity>
+      <EnvironmentLight>
+
+        <SunDiffuseFactor>0.7</SunDiffuseFactor>
+        <AmbientSpecularFactor>4.6</AmbientSpecularFactor>
+
+        <SunDiscColor>
+            <X>0.7</X>
+            <Y>0.4</Y>
+            <Z>0.6</Z>
+        </SunDiscColor>
+
+        <SunDiscInnerDot>0.9996</SunDiscInnerDot>
+        <SunDiscOuterDot>0.9994</SunDiscOuterDot>
+
+        <EnvSkyboxBrightness>0.1</EnvSkyboxBrightness>
+        <EnvAtmosphereBrightness>0.15</EnvAtmosphereBrightness>
+
+        <SunDiscIntensity>0.4</SunDiscIntensity>
+      </EnvironmentLight>
+      <TextureMultipliers>
+          <GlossMultiplier>0.9</GlossMultiplier>
+      </TextureMultipliers>
+    </SunProperties>
+
+    <PostProcessSettings>
+      <Data>
+        <BloomEmissiveness>15</BloomEmissiveness>
+      </Data>
+    </PostProcessSettings>
+  </Definition>
+</Definitions>

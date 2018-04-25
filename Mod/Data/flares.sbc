@@ -1,0 +1,526 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Flares>
+    <Definition xsi:type="FlareDefinition">
+      <Id>
+        <TypeId>FlareDefinition</TypeId>
+        <SubtypeId>Sun</SubtypeId>
+      </Id>
+      <Intensity>3</Intensity>
+      <SubGlares>
+        <!-- 1. Yellowish Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays2</Material>
+          <Color>
+            <X>0.96</X>
+            <Y>0.73</Y>
+            <Z>0.44</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>47000</X>
+            <Y>47000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.5</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 2. Yellowish Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays3</Material>
+          <Color>
+            <X>0.96</X>
+            <Y>0.73</Y>
+            <Z>0.44</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>47000</X>
+            <Y>47000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.48</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 3. Yellowish Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays4</Material>
+          <Color>
+            <X>0.96</X>
+            <Y>0.73</Y>
+            <Z>0.44</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>47000</X>
+            <Y>47000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.46</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- Redish Rays -->
+        <!-- Horizontal -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays3</Material>
+          <Color>
+            <X>0.96</X>
+            <Y>0.23</Y>
+            <Z>0.36</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>67000</X>
+            <Y>25000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>0.5</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.5</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.5</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- Vertical -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays3</Material>
+          <Color>
+            <X>0.96</X>
+            <Y>0.23</Y>
+            <Z>0.36</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>25000</X>
+            <Y>67000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>0.2</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.5</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        
+        
+        <!-- White Center Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays6</Material>
+          <Color>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>1</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>27000</X>
+            <Y>27000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.5</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 1. White Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays2</Material>
+          <Color>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>1</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>28000</X>
+            <Y>28000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.35</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 2. White Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays3</Material>
+          <Color>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>1</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>27000</X>
+            <Y>27000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.32</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 3. White Ray -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunBigRays4</Material>
+          <Color>
+            <X>1</X>
+            <Y>1</Y>
+            <Z>1</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>26000</X>
+            <Y>26000</Y>
+          </Size>
+
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.3</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- Blue Glow -->
+        <SubGlare>
+          <Type>Rotated</Type>
+          <Material>SunBigGlow</Material>
+          <Color>
+            <X>0.14</X>
+            <Y>0.53</Y>
+            <Z>0.96</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>33000</X>
+            <Y>33000</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>0.15</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.15</ScreenIntensityMultiplierEdge>
+
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.9</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+
+          <ScreenCenterDistance>
+            <X>0</X>
+            <Y>0</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- Flares -->
+        <!-- 1. Pink Hexagon -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunFlareHexagon</Material>
+          <Color>
+            <X>0.73</X>
+            <Y>0.36</Y>
+            <Z>0.62</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>12500</X>
+            <Y>12500</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.7</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+          <ScreenCenterDistance>
+            <X>0.6</X>
+            <Y>0.6</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+        <!-- 2. Pink Hexagon -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunFlareHexagon</Material>
+          <Color>
+            <X>0.73</X>
+            <Y>0.36</Y>
+            <Z>0.62</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>4500</X>
+            <Y>4500</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>2</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.75</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+          <ScreenCenterDistance>
+            <X>0.95</X>
+            <Y>0.95</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 3. Pink Hexagon -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunFlareHexagon</Material>
+          <Color>
+            <X>0.73</X>
+            <Y>0.36</Y>
+            <Z>0.62</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>7500</X>
+            <Y>7500</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>0.6</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.72</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+          <ScreenCenterDistance>
+            <X>1.24</X>
+            <Y>1.24</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- Inverted Pink Hexagon -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunFlareHexagon</Material>
+          <Color>
+            <X>0.73</X>
+            <Y>0.36</Y>
+            <Z>0.62</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>8400</X>
+            <Y>8400</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.8</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+          <ScreenCenterDistance>
+            <X>-0.3</X>
+            <Y>-0.3</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+
+        <!-- 1. Blue/Green Hexagon -->
+        <SubGlare>
+          <Type>Oriented</Type>
+          <Material>SunFlareHexagon</Material>
+          <Color>
+            <X>0.36</X>
+            <Y>0.6</Y>
+            <Z>0.74</Z>
+            <W>1</W>
+          </Color>
+          <Size>
+            <X>5500</X>
+            <Y>5500</Y>
+          </Size>
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>0.2</ScreenIntensityMultiplierEdge>
+          <OcclusionToIntensityCurve>
+            <KeyPoint>
+              <Occlusion>0</Occlusion>
+              <Intensity>1</Intensity>
+            </KeyPoint>
+            <KeyPoint>
+              <Occlusion>0.8</Occlusion>
+              <Intensity>0</Intensity>
+            </KeyPoint>
+          </OcclusionToIntensityCurve>
+          <ScreenCenterDistance>
+            <X>1.2</X>
+            <Y>1.2</Y>
+          </ScreenCenterDistance>
+        </SubGlare>
+        
+      </SubGlares>
+    </Definition>
+  </Flares>
+</Definitions>

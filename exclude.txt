@@ -1,0 +1,15 @@
+\.git
+\.vs
+
+\bin
+\obj
+\Properties
+
+\IngameScripts
+\Source
+
+.csproj
+.git
+.sln
+
+App.config
