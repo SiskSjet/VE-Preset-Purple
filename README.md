@@ -1,5 +1,9 @@
 # Sisk's Enviroment Complete
 
+![Space Engineers](https://img.shields.io/badge/Space%20Engineers-1.186.5-brightgreen.svg?longCache=true&style=flat-square)
+
+![Example Screenshot](Mod/thumb.png)
+
 Hey engineers,
 
 this is my complete environment package with a dark sky box containing purple nebula.
