@@ -66,6 +66,21 @@
       </Data>
     </PostProcessSettings>
 
+    <HBAOSettings>
+      <Enabled>true</Enabled>
+
+      <Radius>5.0</Radius>
+      <Bias>0.087</Bias>
+        
+      <SmallScaleAO>0.832</SmallScaleAO>
+      <LargeScaleAO>1.022</LargeScaleAO>
+
+      <PowerExponent>4.88</PowerExponent>
+
+      <BackgroundAOEnable>true</BackgroundAOEnable>
+      <BackgroundViewDepth>0</BackgroundViewDepth>
+    </HBAOSettings>
+
     <ShadowSettings>
       <Data>
         <ShadowCascadeMaxDistance>20000</ShadowCascadeMaxDistance>
