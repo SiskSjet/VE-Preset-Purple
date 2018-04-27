@@ -40,7 +40,10 @@
 
     <PostProcessSettings>
       <Data>
+        <BloomLumaThreshold>0.0</BloomLumaThreshold>
+        <BloomMult>0.013</BloomMult>
         <BloomEmissiveness>15</BloomEmissiveness>
+        <BloomDirtRatio>0.56</BloomDirtRatio>
       </Data>
     </PostProcessSettings>
   </Definition>
