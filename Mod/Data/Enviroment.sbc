@@ -14,11 +14,12 @@
 
     <SunProperties>
       <SunIntensity>40</SunIntensity>
+      <EnvironmentProbe>
+        <TimeOut>0</TimeOut>
+        <DrawDistance>100</DrawDistance>
+      </EnvironmentProbe>
+      
       <EnvironmentLight>
-
-        <SunDiffuseFactor>0.7</SunDiffuseFactor>
-        <AmbientSpecularFactor>4.6</AmbientSpecularFactor>
-
         <SunDiscColor>
             <X>0.7</X>
             <Y>0.4</Y>
@@ -30,6 +31,9 @@
 
         <EnvSkyboxBrightness>0.1</EnvSkyboxBrightness>
         <EnvAtmosphereBrightness>0.15</EnvAtmosphereBrightness>
+
+        <AmbientRadius>40.0</AmbientRadius>
+        <ForwardDimDistance>7.816</ForwardDimDistance>
 
         <SunDiscIntensity>0.4</SunDiscIntensity>
       </EnvironmentLight>
