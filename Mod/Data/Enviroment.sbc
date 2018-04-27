@@ -48,11 +48,21 @@
     </SunProperties>
 
     <PostProcessSettings>
+      <HistogramLogMin>-8</HistogramLogMin>
+      <HistogramLogMax>8</HistogramLogMax>
+      <HistogramFilterMin>9.32</HistogramFilterMin>
+      <HistogramFilterMax>84.517</HistogramFilterMax>
+      <HistogramSkyboxFactor>0.01</HistogramSkyboxFactor>
+      <MinEyeAdaptationLogBrightness>-8.0</MinEyeAdaptationLogBrightness>
+      <MaxEyeAdaptationLogBrightness>2.597</MaxEyeAdaptationLogBrightness>
       <Data>
         <BloomLumaThreshold>0.0</BloomLumaThreshold>
         <BloomMult>0.013</BloomMult>
         <BloomEmissiveness>15</BloomEmissiveness>
         <BloomDirtRatio>0.56</BloomDirtRatio>
+
+        <EyeAdaptationSpeedUp>0.586</EyeAdaptationSpeedUp>
+        <EyeAdaptationSpeedDown>0.365</EyeAdaptationSpeedDown>
       </Data>
     </PostProcessSettings>
 
