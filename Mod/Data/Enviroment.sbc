@@ -29,6 +29,11 @@
         <SunDiscInnerDot>0.9996</SunDiscInnerDot>
         <SunDiscOuterDot>0.9994</SunDiscOuterDot>
 
+        <AODirLight>0.285</AODirLight>
+        <AOIndirectLight>1</AOIndirectLight>
+        <AOPointLight>0.37</AOPointLight>
+        <AOSpotLight>0.3</AOSpotLight>
+
         <EnvSkyboxBrightness>0.1</EnvSkyboxBrightness>
         <EnvAtmosphereBrightness>0.15</EnvAtmosphereBrightness>
 
@@ -50,5 +55,13 @@
         <BloomDirtRatio>0.56</BloomDirtRatio>
       </Data>
     </PostProcessSettings>
+
+    <ShadowSettings>
+      <Data>
+        <ShadowCascadeMaxDistance>20000</ShadowCascadeMaxDistance>
+        <ShadowCascadeSpreadFactor>1.342</ShadowCascadeSpreadFactor>
+        <ShadowCascadeZOffset>50000</ShadowCascadeZOffset>
+      </Data>
+    </ShadowSettings>
   </Definition>
 </Definitions>
