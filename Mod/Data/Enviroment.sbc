@@ -14,11 +14,12 @@
 
     <SunProperties>
       <SunIntensity>40</SunIntensity>
+      <EnvironmentProbe>
+        <TimeOut>0</TimeOut>
+        <DrawDistance>100</DrawDistance>
+      </EnvironmentProbe>
+      
       <EnvironmentLight>
-
-        <SunDiffuseFactor>0.7</SunDiffuseFactor>
-        <AmbientSpecularFactor>4.6</AmbientSpecularFactor>
-
         <SunDiscColor>
             <X>0.7</X>
             <Y>0.4</Y>
@@ -28,8 +29,16 @@
         <SunDiscInnerDot>0.9996</SunDiscInnerDot>
         <SunDiscOuterDot>0.9994</SunDiscOuterDot>
 
+        <AODirLight>0.285</AODirLight>
+        <AOIndirectLight>1</AOIndirectLight>
+        <AOPointLight>0.37</AOPointLight>
+        <AOSpotLight>0.3</AOSpotLight>
+
         <EnvSkyboxBrightness>0.1</EnvSkyboxBrightness>
         <EnvAtmosphereBrightness>0.15</EnvAtmosphereBrightness>
+
+        <AmbientRadius>40.0</AmbientRadius>
+        <ForwardDimDistance>7.816</ForwardDimDistance>
 
         <SunDiscIntensity>0.4</SunDiscIntensity>
       </EnvironmentLight>
@@ -39,9 +48,45 @@
     </SunProperties>
 
     <PostProcessSettings>
+      <HistogramLogMin>-3.813</HistogramLogMin>
+      <HistogramLogMax>8</HistogramLogMax>
+      <HistogramFilterMin>19.32</HistogramFilterMin>
+      <HistogramFilterMax>84.517</HistogramFilterMax>
+      <HistogramSkyboxFactor>0.01</HistogramSkyboxFactor>
+      <MinEyeAdaptationLogBrightness>-5.0</MinEyeAdaptationLogBrightness>
+      <MaxEyeAdaptationLogBrightness>2.597</MaxEyeAdaptationLogBrightness>
       <Data>
+        <BloomLumaThreshold>0.0</BloomLumaThreshold>
+        <BloomMult>0.034</BloomMult>
         <BloomEmissiveness>15</BloomEmissiveness>
+        <BloomDirtRatio>0.56</BloomDirtRatio>
+
+        <EyeAdaptationSpeedUp>0.586</EyeAdaptationSpeedUp>
+        <EyeAdaptationSpeedDown>0.365</EyeAdaptationSpeedDown>
       </Data>
     </PostProcessSettings>
+
+    <HBAOSettings>
+      <Enabled>true</Enabled>
+
+      <Radius>5.0</Radius>
+      <Bias>0.087</Bias>
+        
+      <SmallScaleAO>0.832</SmallScaleAO>
+      <LargeScaleAO>1.022</LargeScaleAO>
+
+      <PowerExponent>4.88</PowerExponent>
+
+      <BackgroundAOEnable>true</BackgroundAOEnable>
+      <BackgroundViewDepth>0</BackgroundViewDepth>
+    </HBAOSettings>
+
+    <ShadowSettings>
+      <Data>
+        <ShadowCascadeMaxDistance>20000</ShadowCascadeMaxDistance>
+        <ShadowCascadeSpreadFactor>0.085</ShadowCascadeSpreadFactor>
+        <ShadowCascadeZOffset>50000</ShadowCascadeZOffset>
+      </Data>
+    </ShadowSettings>
   </Definition>
 </Definitions>
