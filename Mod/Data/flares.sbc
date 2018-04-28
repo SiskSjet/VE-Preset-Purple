@@ -201,8 +201,8 @@
             <Y>27000</Y>
           </Size>
 
-          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
-          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
+          <ScreenIntensityMultiplierCenter>3</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>3</ScreenIntensityMultiplierEdge>
 
           <OcclusionToIntensityCurve>
             <KeyPoint>
