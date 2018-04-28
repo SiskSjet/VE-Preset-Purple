@@ -349,7 +349,7 @@
               <Intensity>1</Intensity>
             </KeyPoint>
             <KeyPoint>
-              <Occlusion>0.9</Occlusion>
+              <Occlusion>0.7</Occlusion>
               <Intensity>0</Intensity>
             </KeyPoint>
           </OcclusionToIntensityCurve>
