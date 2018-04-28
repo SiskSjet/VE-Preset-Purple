@@ -48,16 +48,16 @@
     </SunProperties>
 
     <PostProcessSettings>
-      <HistogramLogMin>-8</HistogramLogMin>
+      <HistogramLogMin>-3.813</HistogramLogMin>
       <HistogramLogMax>8</HistogramLogMax>
-      <HistogramFilterMin>9.32</HistogramFilterMin>
+      <HistogramFilterMin>19.32</HistogramFilterMin>
       <HistogramFilterMax>84.517</HistogramFilterMax>
       <HistogramSkyboxFactor>0.01</HistogramSkyboxFactor>
-      <MinEyeAdaptationLogBrightness>-8.0</MinEyeAdaptationLogBrightness>
+      <MinEyeAdaptationLogBrightness>-5.0</MinEyeAdaptationLogBrightness>
       <MaxEyeAdaptationLogBrightness>2.597</MaxEyeAdaptationLogBrightness>
       <Data>
         <BloomLumaThreshold>0.0</BloomLumaThreshold>
-        <BloomMult>0.013</BloomMult>
+        <BloomMult>0.034</BloomMult>
         <BloomEmissiveness>15</BloomEmissiveness>
         <BloomDirtRatio>0.56</BloomDirtRatio>
 
@@ -84,7 +84,7 @@
     <ShadowSettings>
       <Data>
         <ShadowCascadeMaxDistance>20000</ShadowCascadeMaxDistance>
-        <ShadowCascadeSpreadFactor>1.342</ShadowCascadeSpreadFactor>
+        <ShadowCascadeSpreadFactor>0.085</ShadowCascadeSpreadFactor>
         <ShadowCascadeZOffset>50000</ShadowCascadeZOffset>
       </Data>
     </ShadowSettings>
