@@ -68,7 +68,7 @@ Number.prototype.pad = function (size) {
             const image = images[i];
             const column = (i % columns);
             const img = document.createElement("img");
-            img.src = "img/thumb/" + image + ".sec.d.png";
+            img.src = "img/thumb/" + image + ".sec.d.jpg";
             img.className = "hover-shadow cursor";
             img.setAttribute("data-loading", "true");
             img.onclick = function () {
@@ -110,9 +110,9 @@ Number.prototype.pad = function (size) {
 
         vanillaSecSwitch.onchange = function (e) {
             if (e.target.checked) {
-                imageElements[0].src = "img/" + images[current] + ".sec.png";
+                imageElements[0].src = "img/" + images[current] + ".sec.jpg";
             } else {
-                imageElements[0].src = "img/" + images[current] + ".vanilla.png";
+                imageElements[0].src = "img/" + images[current] + ".vanilla.jpg";
             }
     
             if (loaded > 0) {
@@ -160,12 +160,12 @@ Number.prototype.pad = function (size) {
 
         loaded = -1;
         if (vanillaSecSwitch.checked) {
-            imageElements[0].src = "img/" + images[id] + ".sec.png";
+            imageElements[0].src = "img/" + images[id] + ".sec.jpg";
         } else {
-            imageElements[0].src = "img/" + images[id] + ".vanilla.png";
+            imageElements[0].src = "img/" + images[id] + ".vanilla.jpg";
         }
 
-        imageElements[1].src = "img/" + images[id] + ".sec.d.png";
+        imageElements[1].src = "img/" + images[id] + ".sec.d.jpg";
 
         showLoader();
     }
