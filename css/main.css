@@ -121,7 +121,9 @@ img.hover-shadow {
     font-size: 14px;
     padding: 8px 12px;
     position: absolute;
-    top: 0;
+    top: 100%;
+    z-index: 9999;
+    margin-top: -95px;
 }
 
 .modal .content .compare {
