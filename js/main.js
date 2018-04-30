@@ -4,144 +4,173 @@ Number.prototype.pad = function (size) {
     return s;
 };
 
-const images = [];
-const modal = document.getElementById("image-modal");
-const slider = document.getElementById("image-slider");
-const numberText = slider.getElementsByClassName("number-text")[0];
-const compareWidget = slider.getElementsByClassName("comparison-container")[0]
-const imageElements = compareWidget.querySelectorAll('.comparison-image');
-const vanillaSecSwitch = document.getElementById("vanilla-sec-switch");
-const loader = document.getElementById("loader");
-let current = 0;
-let loaded = -1;
+(function (root) {
+    const images = [];
+    const modal = document.getElementById("image-modal");
+    const slider = document.getElementById("image-slider");
+    const numberText = slider.getElementsByClassName("number-text")[0];
+    const compareWidget = slider.getElementsByClassName("comparison-container")[0]
+    const imageElements = compareWidget.querySelectorAll('.comparison-image');
+    const vanillaSecSwitch = document.getElementById("vanilla-sec-switch");
+    const loader = document.getElementById("loader");
+    let current = 0;
+    let loaded = -1;
 
-modal.addEventListener("click", function (e) {
-    e = window.event || e;
-    if(this === e.target) {
-        closeModal();
-    }
-});
-
-imageElements[0].addEventListener("load", imageLoaded);
-imageElements[1].addEventListener("load", imageLoaded);
-
-function imageLoaded() {
-    loaded++;
-
-    if (loaded == 1) {
-        loader.style.display = "none";
-        window.dispatchEvent(new Event('resize'));
-    }
-}
-
-function showLoader() {
-    loader.style.display = "block";
-}
-
-function openModal() {
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    modal.style.display = "none";
-}
-
-function next() {
-    setSlide(current + 1);
-}
-
-function prev() {
-    setSlide(current - 1);
-}
-
-function setSlide(id) {
-    if (id > images.length - 1) { id = 0 }
-    if (id < 0) { id = images.length - 1 }
-    current = id;
-    numberText.textContent = `${id}/${images.length}`;
-
-    loaded = -1;
-    if (vanillaSecSwitch.checked) {
-        imageElements[0].src = "img/" + images[id] + ".sec.png";
-    } else {
-        imageElements[0].src = "img/" + images[id] + ".vanilla.png";
-    }
     
-    imageElements[1].src = "img/" + images[id] + ".sec.d.png";
 
-    showLoader();
-}
+    imageElements[0].addEventListener("load", imageLoaded);
+    imageElements[1].addEventListener("load", imageLoaded);
+    document.addEventListener('DOMContentLoaded', init);
 
-function switchVanillaSec() {
-    if (vanillaSecSwitch.checked) {
-        imageElements[0].src = "img/" + images[current] + ".sec.png";
-    } else {
-        imageElements[0].src = "img/" + images[current] + ".vanilla.png";
+    function init() {
+        createImageGrid();
+        initModal();
+
+        new ImageComparison({
+            container: compareWidget,
+            startPosition: 30,
+            data: [
+                {
+                    image: imageElements[0],
+                    label: 'before'
+                },
+                {
+                    image: imageElements[1],
+                    label: 'after'
+                }
+            ],
+        });
     }
 
-    if (loaded > 0) {
-        loaded--;
-    }
-    
-    showLoader();
-}
+    function createImageGrid() {
+        const columns = 4;
+        const es = 11;
+        const ss = 22;
+        const row = document.getElementsByClassName("row")[0];
 
-function createImageTags() {
-    const columns = 4;
-    const es = 11;
-    const ss = 22;
-    const row = document.getElementsByClassName("row")[0];
+        for (let index = 1; index < es + 1; index++) {
+            const image = "es." + index.pad(2);
+            images.push(image);
+        }
 
-    for (let index = 1; index < es + 1; index++) {
-        const image = "es." + index.pad(2);
-        images.push(image);
-    }
+        for (let index = 1; index < ss + 1; index++) {
+            const image = "ss." + index.pad(2);
+            images.push(image);
+        }
 
-    for (let index = 1; index < ss + 1; index++) {
-        const image = "ss." + index.pad(2);
-        images.push(image);
-    }
+        for (let index = 1; index < columns + 1; index++) {
+            const column = document.createElement("div");
+            column.className = "column";
+            row.appendChild(column);
+        }
 
-    for (let index = 1; index < columns + 1; index++) {
-        const column = document.createElement("div");
-        column.className = "column";
-        row.appendChild(column);
-    }
-
-    for (let i = 0; i < images.length; i++) {
-        const image = images[i];
-        const column = (i % columns);
-        const img = document.createElement("img");
-        img.src = "img/thumb/" + image + ".sec.d.png";
-        img.className = "hover-shadow cursor";
-        img.setAttribute("data-loading", "true");
-        img.setAttribute("onclick", `openModal(); setSlide(${i})`);
-        img.onload = function() {
-            img.removeAttribute('data-loading');
-          };
-        document.getElementsByClassName("column")[column].appendChild(img);
-    }
-}
-
-function domReady() {
-    new ImageComparison({
-        container: compareWidget,
-        startPosition: 30,
-        data: [
-            {
-                image: imageElements[0],
-                label: 'before'
-            },
-            {
-                image: imageElements[1],
-                label: 'after'
+        for (let i = 0; i < images.length; i++) {
+            const image = images[i];
+            const column = (i % columns);
+            const img = document.createElement("img");
+            img.src = "img/thumb/" + image + ".sec.d.png";
+            img.className = "hover-shadow cursor";
+            img.setAttribute("data-loading", "true");
+            img.onclick = function () {
+                openModal();
+                setSlide(i);
             }
-        ],
-    });
-}
 
-createImageTags();
-document.addEventListener('DOMContentLoaded', domReady);
+            img.onload = function () {
+                img.removeAttribute('data-loading');
+            };
+
+            document.getElementsByClassName("column")[column].appendChild(img);
+        }
+    }
+
+    function initModal() {
+        modal.addEventListener("click", function (e) {
+            e = window.event || e;
+            if (this === e.target) {
+                closeModal();
+            }
+        });
+
+        modal.getElementsByClassName("close")[0].addEventListener("click", function (e) {
+            closeModal();
+        });
+
+        modal.getElementsByClassName("prev")[0].addEventListener("click", function (e) { 
+            prev();
+        });
+
+        modal.getElementsByClassName("next")[0].addEventListener("click", function (e) { 
+            next();
+        });
+
+        modal.getElementsByClassName("prev")[0].addEventListener("click", function (e) { 
+            prev();
+        });
+
+        vanillaSecSwitch.onchange = function (e) {
+            if (e.target.checked) {
+                imageElements[0].src = "img/" + images[current] + ".sec.png";
+            } else {
+                imageElements[0].src = "img/" + images[current] + ".vanilla.png";
+            }
+    
+            if (loaded > 0) {
+                loaded--;
+            }
+    
+            showLoader();
+        }
+    }
+
+    function imageLoaded() {
+        loaded++;
+
+        if (loaded == 1) {
+            loader.style.display = "none";
+            window.dispatchEvent(new Event('resize'));
+        }
+    }
+
+    function showLoader() {
+        loader.style.display = "block";
+    }
+
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    function next() {
+        setSlide(current + 1);
+    }
+
+    function prev() {
+        setSlide(current - 1);
+    }
+
+    function setSlide(id) {
+        if (id > images.length - 1) { id = 0 }
+        if (id < 0) { id = images.length - 1 }
+        current = id;
+        numberText.textContent = `${id}/${images.length}`;
+
+        loaded = -1;
+        if (vanillaSecSwitch.checked) {
+            imageElements[0].src = "img/" + images[id] + ".sec.png";
+        } else {
+            imageElements[0].src = "img/" + images[id] + ".vanilla.png";
+        }
+
+        imageElements[1].src = "img/" + images[id] + ".sec.d.png";
+
+        showLoader();
+    }
+
+})(this);
 
 /*
  * ImageComparison: Slider to quickly compare two images.

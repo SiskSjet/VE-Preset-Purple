@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self';">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline';">
         <title>Sisk's Enviroment Complete</title>
         <meta name="Description" content="A custom skybox for Space Engineers.">
         <meta name="Keywords" content="sisk enviroment skybox space-engineers space engineers purple dark">
@@ -25,7 +25,7 @@
 
         <div class="row"></div>
         <div class="modal" id="image-modal">
-            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <span class="close cursor">&times;</span>
             <div class="content">
                 <div class="slider" id="image-slider">
                     <div class="number-text"></div>
@@ -34,13 +34,13 @@
                         <img class="comparison-image" src="img/es.01.sec.d.png">
                     </div>
                 </div>
-                <a class="prev" onclick="prev()">&#10094;</a>
-                <a class="next" onclick="next()">&#10095;</a>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
                 <div class="loader" id="loader" style="display: none"></div>
 
                 <div class="compare-switch">
                     <label class="switch">
-                        <input id="vanilla-sec-switch" type="checkbox" onchange="switchVanillaSec()">
+                        <input id="vanilla-sec-switch" type="checkbox">
                         <span class="slider"></span>
                     </label>
                 </div>
