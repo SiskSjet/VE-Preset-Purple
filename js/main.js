@@ -124,7 +124,6 @@ function createImageTags() {
 }
 
 function domReady() {
-    createImageTags();
     new ImageComparison({
         container: compareWidget,
         startPosition: 30,
@@ -141,6 +140,7 @@ function domReady() {
     });
 }
 
+createImageTags();
 document.addEventListener('DOMContentLoaded', domReady);
 
 /*

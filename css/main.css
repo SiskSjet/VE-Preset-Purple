@@ -87,8 +87,8 @@ img.hover-shadow {
 }
 
 .modal .content .loader {
-    border: 6px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #5a3f92; /* Blue */
+    border: 0px solid #f3f3f3;
+    border-top: 10px solid #5a3f92;
     border-radius: 50%;
     width: 120px;
     height: 120px;
@@ -97,8 +97,8 @@ img.hover-shadow {
     top: 50%;
     z-index: 999;
     left: 50%;
-    margin-top: -60px;
-    margin-left: -60px;
+    margin-top: -85px;
+    margin-left: -66px;
 }
 
 .modal .close {
