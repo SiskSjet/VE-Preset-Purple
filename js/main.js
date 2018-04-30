@@ -11,11 +11,35 @@ const numberText = slider.getElementsByClassName("number-text")[0];
 const compareWidget = slider.getElementsByClassName("comparison-container")[0]
 const imageElements = compareWidget.querySelectorAll('.comparison-image');
 const vanillaSecSwitch = document.getElementById("vanilla-sec-switch");
+const loader = document.getElementById("loader");
 let current = 0;
+let loaded = -1;
+
+modal.addEventListener("click", function (e) {
+    e = window.event || e;
+    if(this === e.target) {
+        closeModal();
+    }
+});
+
+imageElements[0].addEventListener("load", imageLoaded);
+imageElements[1].addEventListener("load", imageLoaded);
+
+function imageLoaded() {
+    loaded++;
+
+    if (loaded == 1) {
+        loader.style.display = "none";
+        window.dispatchEvent(new Event('resize'));
+    }
+}
+
+function showLoader() {
+    loader.style.display = "block";
+}
 
 function openModal() {
     modal.style.display = "block";
-    // window.dispatchEvent(new Event('resize'));
 }
 
 function closeModal() {
@@ -36,14 +60,16 @@ function setSlide(id) {
     current = id;
     numberText.textContent = `${id}/${images.length}`;
 
+    loaded = -1;
     if (vanillaSecSwitch.checked) {
         imageElements[0].src = "img/" + images[id] + ".sec.png";
     } else {
         imageElements[0].src = "img/" + images[id] + ".vanilla.png";
     }
-
+    
     imageElements[1].src = "img/" + images[id] + ".sec.d.png";
-    window.dispatchEvent(new Event('resize'));
+
+    showLoader();
 }
 
 function switchVanillaSec() {
@@ -52,6 +78,12 @@ function switchVanillaSec() {
     } else {
         imageElements[0].src = "img/" + images[current] + ".vanilla.png";
     }
+
+    if (loaded > 0) {
+        loaded--;
+    }
+    
+    showLoader();
 }
 
 function createImageTags() {
@@ -79,11 +111,15 @@ function createImageTags() {
     for (let i = 0; i < images.length; i++) {
         const image = images[i];
         const column = (i % columns);
-        const elem = document.createElement("img");
-        elem.src = "img/thumb/" + image + ".sec.d.png";
-        elem.className = "hover-shadow cursor";
-        elem.setAttribute("onclick", `openModal(); setSlide(${i})`);
-        document.getElementsByClassName("column")[column].appendChild(elem);
+        const img = document.createElement("img");
+        img.src = "img/thumb/" + image + ".sec.d.png";
+        img.className = "hover-shadow cursor";
+        img.setAttribute("data-loading", "true");
+        img.setAttribute("onclick", `openModal(); setSlide(${i})`);
+        img.onload = function() {
+            img.removeAttribute('data-loading');
+          };
+        document.getElementsByClassName("column")[column].appendChild(img);
     }
 }
 
