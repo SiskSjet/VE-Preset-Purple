@@ -53,9 +53,9 @@ class App {
             onePageNav.Render(decodeURI(window.location.hash));
         }
 
-        document.addEventListener("DOMContentLoaded", (event) => {
+        window.onload = (event) => {
             window.dispatchEvent(new Event('hashchange'));
-        });
+        };
     }
 
     private async PreloadThumnails(index: number = 0): Promise<void> {
@@ -198,7 +198,7 @@ class App {
         this._current = index;
         const page = this._container.querySelector(".comparison.page");
         this._headerSubtitle.innerText = "Move the slider to see the diference between the two images.";
-        page.querySelector(".image-index").innerText = `${index + 1}/${this._images.length}`;
+        (page.querySelector(".image-index") as HTMLElement).innerText = `${index + 1}/${this._images.length}`;
         const images = this._images;
 
         if (!this._isComparisonInitialized) {

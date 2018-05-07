@@ -45,9 +45,9 @@ class App {
         window.onhashchange = function (event) {
             onePageNav.Render(decodeURI(window.location.hash));
         };
-        document.addEventListener("DOMContentLoaded", (event) => {
+        window.onload = (event) => {
             window.dispatchEvent(new Event('hashchange'));
-        });
+        };
     }
     PreloadThumnails(index = 0) {
         return __awaiter(this, void 0, void 0, function* () {
