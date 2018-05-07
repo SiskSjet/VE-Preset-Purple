@@ -8,7 +8,9 @@ Hey engineers,
 
 today I'm finally ready to release a "big" update, but first a big thanks to [Digi](https://steamcommunity.com/id/hunterdigi/myworkshopfiles/?appid=244850&sort=score&browsefilter=myfiles&view=imagewall) for pointing out the profiler build.
 
-In this update, among other things, I've improved directional lighting and the resulting shadows Eye Adaptation to better match my sun intensity, and I've adjusted Bloom a bit more.
+In this update, among other things, I've improved directional lighting and the resulting shadows, Eye Adaptation to better match my sun intensity, and I've adjusted Bloom a bit more.
+
+I have set up a comparison gallery that you can view [here](https://sisksjet.github.io/SisksEnvironmentComplete/)
 
 * * *
 
