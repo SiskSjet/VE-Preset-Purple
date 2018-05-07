@@ -15,13 +15,13 @@ class CompareSlider {
         this._resizeElement = container.querySelector(".top");
 
         this._dragElement.style.left = `${this._default}%`;
-            this._resizeElement.style.width = `calc(${this._default}% + ${this.Skewed ? 1000 : 0}px)`;
+        this._resizeElement.style.width = `calc(${this._default}% + ${this.Skewed ? 1000 : 0}px)`;
         this.SetEvents();
     }
 
     public get Container(): HTMLElement { return this._container; }
     public get ResizeElement(): HTMLElement { return this._resizeElement; }
-    public get DragElement(): HTMLElement { return this._dragElement;}
+    public get DragElement(): HTMLElement { return this._dragElement; }
     public get Skewed(): boolean {
         return this._container.classList.contains("skewed");
     }
@@ -48,7 +48,7 @@ class CompareSlider {
                 return;
             }
             comparison.CalculatePosition(this, event);
-        });        
+        });
 
         addEventListeners(this._dragElement, ["mousedown", "touchstart"], function (event: MouseEvent & TouchEvent) {
             event.preventDefault();
@@ -73,7 +73,7 @@ class CompareSlider {
                 comparison._dragElement.classList.remove("draggable");
                 removeEventListeners(document.body, ["mousemove", "touchmove"], move);
                 removeEventListeners(document.body, ["mouseup", "touchend", "touchcancel"], end);
-                
+
                 setTimeout(() => { comparison._isMoving = false; }, 10);
             }
 
@@ -197,16 +197,17 @@ class CompareSlider {
         const maxWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const maxHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
-        const pageHeight = page.offsetHeight;
+        const pageHeight = page.parentElement.offsetHeight;
+        const pageOffset = page.parentElement.offsetTop;
 
         const reference = this._container.querySelector(".content") as HTMLElement;
-        const width = reference.offsetWidth;
         const height = reference.offsetHeight;
-        const ratio = width / height;
+        const ratio = 1.777777777777778;
         const offset = pageHeight - height;
 
-        const widthT = (maxHeight - offset) * ratio
-        let percent = widthT / maxWidth * 100;
+        const widthT = (maxHeight - pageOffset - offset) * ratio
+        let percent = (widthT) / maxWidth * 100;
+
         if (percent > 100) {
             percent = 100;
         }
@@ -215,6 +216,11 @@ class CompareSlider {
             item.style.width = percent + "vw";
         });
     }
+}
+
+function GetHeight(element: Element): number {
+    const style = window.getComputedStyle(element, null);
+    return parseFloat(style.getPropertyValue("height")) + parseFloat(style.getPropertyValue("margin-bottom"));
 }
 
 function addEventListeners(element: Element, events: string[], listener: EventListenerOrEventListenerObject) {

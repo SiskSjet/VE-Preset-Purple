@@ -3,7 +3,6 @@
 // $grey = #242422;
 // $light-grey = #262625;
 // $white = #f6f4f1;
-
 @require 'colors';
 @require 'typo';
 
@@ -40,7 +39,7 @@ body {
         display: none;
 
         &:checked+.slider {
-            background-color:  $purple;
+            background-color: $purple;
         }
 
         &:focus+.slider {
@@ -226,6 +225,7 @@ footer {
     .page {
         position: absolute;
         margin: auto;
+        margin-bottom: 26px;
         opacity: 0;
         transition: opacity 0.6s;
         pointer-events: none;
@@ -421,6 +421,7 @@ footer {
                 z-index: 2;
                 width: 50%;
                 position: absolute;
+                transform: translateY(-100%);
 
                 .description {
                     top: 20px;

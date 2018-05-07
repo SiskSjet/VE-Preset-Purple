@@ -159,14 +159,14 @@ class CompareSlider {
         }
         const maxWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
         const maxHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-        const pageHeight = page.offsetHeight;
+        const pageHeight = page.parentElement.offsetHeight;
+        const pageOffset = page.parentElement.offsetTop;
         const reference = this._container.querySelector(".content");
-        const width = reference.offsetWidth;
         const height = reference.offsetHeight;
-        const ratio = width / height;
+        const ratio = 1.777777777777778;
         const offset = pageHeight - height;
-        const widthT = (maxHeight - offset) * ratio;
-        let percent = widthT / maxWidth * 100;
+        const widthT = (maxHeight - pageOffset - offset) * ratio;
+        let percent = (widthT) / maxWidth * 100;
         if (percent > 100) {
             percent = 100;
         }
@@ -175,6 +175,10 @@ class CompareSlider {
             item.style.width = percent + "vw";
         });
     }
+}
+function GetHeight(element) {
+    const style = window.getComputedStyle(element, null);
+    return parseFloat(style.getPropertyValue("height")) + parseFloat(style.getPropertyValue("margin-bottom"));
 }
 function addEventListeners(element, events, listener) {
     for (let i = 0; i < events.length; i++) {
