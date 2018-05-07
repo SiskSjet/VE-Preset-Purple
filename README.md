@@ -1,4 +1,4 @@
-# Sisk's Enviroment Complete
+# Sisk's Environment Complete
 
 ![Space Engineers](https://img.shields.io/badge/Space%20Engineers-1.186.5-brightgreen.svg?longCache=true&style=flat-square)
 
@@ -6,14 +6,15 @@
 
 Hey engineers,
 
-this is my complete environment package with a dark sky box containing purple nebula.
-I modified enviroment lighting so dark spots on planet, asteroids and ships should be darker.
+today I'm finally ready to release a "big" update, but first a big thanks to [Digi](https://steamcommunity.com/id/hunterdigi/myworkshopfiles/?appid=244850&sort=score&browsefilter=myfiles&view=imagewall) for pointing out the profiler build.
 
-Bloom is slightly reduced and instead of removing dirt on the screen, I reduced it and adjusted the color to the lense flares. Now it should be less annoying.
+In this update, among other things, I've improved directional lighting and the resulting shadows Eye Adaptation to better match my sun intensity, and I've adjusted Bloom a bit more.
 
-The sun is completely redone. The sun disk is a bit smaller, but with several custom beams in different colors. A light blue glow completes this.
+* * *
 
-In addition to the sun I create hexagon lense flares that fits nicely with the "dirt on screen".
+This is my complete environment package with a dark sky box containing purple nebula, modified environment lighting and custom sun rays and flares.
+
+If you do not like the Skybox or you do not want modified sun rays, check out the collection above. It includes  Skybox, Sun and Environment as seperate mods. They can be combined so that you can build your Skybox to your liking.
 
 **This Sky Box does not contain a Speed Mod.**
 
@@ -23,8 +24,9 @@ In addition to the sun I create hexagon lense flares that fits nicely with the "
 * Custom sun rays and lense flare
 * Reduces and modified "screen dirt"
 * Darker dark sides
+* Improved directional light and shadows
+* Less Bloom
 
 ## TODO
 
-* Reduce glow from asteroids in direct sunlight without lowering `SunIntensity`
 * Reduce or remove "colored atmospheric fog" between dark and lighten side of planets
