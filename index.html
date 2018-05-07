@@ -1,51 +1,115 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline';">
-        <title>Sisk's Enviroment Complete</title>
-        <meta name="Description" content="A custom skybox for Space Engineers.">
-        <meta name="Keywords" content="sisk enviroment skybox space-engineers space engineers purple dark">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link type="image/png" href="favicon@16.png" rel="icon" sizes="16x16">  
-        <link type="image/png" href="favicon@32.png" rel="icon" sizes="32x32">  
-        <link type="image/png" href="favicon@32.png" rel="icon" sizes="64x64"> 
-        <link type="image/png" href="favicon@96.png" rel="icon" sizes="96x96">
-        <link type="image/png" href="favicon@128.png" rel="icon" sizes="128x128">
-        <link type="image/png" href="favicon@256.png" rel="icon" sizes="256x256">
-        <link type="image/png" href="favicon.png" rel="icon" sizes="512x512">
-        <link type="text/css" href="css/main.css" rel="stylesheet" media="screen">
-    </head>
-    <body>
-        <header>
-            <h1>Sisk's Enviroment Complete Comparison</h1>
-            <p>Pick an image to compare vanilla, last SEC and current SEC.</p>
-        </header>
 
-        <div class="row"></div>
-        <div class="modal" id="image-modal">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline';">
+    <title>Sisk's Enviroment Complete - Comparison</title>
+    <meta name="Description" content="A custom skybox for Space Engineers.">
+    <meta name="Keywords" content="sisk enviroment skybox space-engineers space engineers purple dark">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="image/png" href="favicon@16.png" rel="icon" sizes="16x16">
+    <link type="image/png" href="favicon@32.png" rel="icon" sizes="32x32">
+    <link type="image/png" href="favicon@32.png" rel="icon" sizes="64x64">
+    <link type="image/png" href="favicon@96.png" rel="icon" sizes="96x96">
+    <link type="image/png" href="favicon@128.png" rel="icon" sizes="128x128">
+    <link type="image/png" href="favicon@256.png" rel="icon" sizes="256x256">
+    <link type="image/png" href="favicon.png" rel="icon" sizes="512x512">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link type="text/css" href="css/app.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+    <div class="loading-screen visible">
+        <div class="loader">
+            <svg enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                <path d="m31.6 3.5c-25.7 10.1-38.2 39.2-28.1 64.9s39.2 38.3 64.9 28.1l-3.1-7.9c-21.3 8.4-45.4-2-53.8-23.3s2-45.4 23.3-53.8l-3.2-8z"
+                    fill="#fff">
+                    <animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50"
+                        type="rotate" />
+                </path>
+                <path d="m42.3 39.6c5.7-4.3 13.9-3.1 18.1 2.7 4.3 5.7 3.1 13.9-2.7 18.1l4.1 5.5c8.8-6.5 10.6-19 4.1-27.7-6.5-8.8-19-10.6-27.7-4.1l4.1 5.5z"
+                    fill="#fff">
+                    <animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="-360 50 50"
+                        type="rotate" />
+                </path>
+                <path d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5 L82,35.7z"
+                    fill="#fff">
+                    <animateTransform attributeName="transform" attributeType="XML" dur="2s" from="0 50 50" repeatCount="indefinite" to="360 50 50"
+                        type="rotate" />
+                </path>
+            </svg>
+        </div>
+    </div>
+    <header>
+        <h1>Sisk's Enviroment Complete - Comparison</h1>
+        <p>Pick an image to compare vanilla, last SEC and current SEC.</p>
+    </header>
+
+    <main class="main-content">
+        <div class="gallery page"></div>
+        <div class="comparison page">
             <span class="close cursor">&times;</span>
-            <div class="content">
-                <div class="slider" id="image-slider">
-                    <div class="number-text"></div>
-                    <div class="comparison-container">
-                        <img class="comparison-image" src="img/es.01.vanilla.jpg">
-                        <img class="comparison-image" src="img/es.01.sec.d.jpg">
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+
+            <div class="image-index">0 / 0</div>
+            <div class="splitview skewed">
+                <div class="panel bottom">
+                    <div class="content">
+                        <div class="description">
+                            <h1>Current</h1>
+                        </div>
+                        <img>
                     </div>
                 </div>
-                <a class="prev">&#10094;</a>
-                <a class="next">&#10095;</a>
-                <div class="loader" id="loader" style="display: none"></div>
 
-                <div class="compare-switch">
+                <div class="panel top">
+                    <div class="content">
+                        <div class="description">
+                            <h1>Vanilla</h1>
+                        </div>
+                        <img>
+                    </div>
+                </div>
+                <div class="handle"></div>
+            </div>
+
+            <div class="option-panel">
+                <div class="compare switch-container">
                     <label class="switch">
-                        <input id="vanilla-sec-switch" type="checkbox">
+                        <input id="vanilla-toggle" type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="skewed switch-container">
+                    <label class="switch">
+                        <input id="skewed-toggle" type="checkbox">
                         <span class="slider"></span>
                     </label>
                 </div>
             </div>
         </div>
-        <script src="js/main.js"></script>
-    </body>
+        <div class="error page">
+            <h1>This page cannot be seen</h1>
+            <h3>Not even Lord Clang sees your request</h3>
+            <p>Make sure you typed in the page address correctly or go back to your previous page.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="content">
+            <div class="copy">&copy; Copyright 2018, Sisk S'jet</div>
+            <div class="links">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1369663583">
+                    <img src="data:image/jpeg;base64,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">
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/compareSlider.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
 </html>
