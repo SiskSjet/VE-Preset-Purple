@@ -1,0 +1,74 @@
+﻿[h1][b]I⠀N⠀F⠀O[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+This is my complete environment package with a dark sky box containing purple nebula, modified environment lighting and custom sun rays and flares.
+I have set up a comparison gallery that you can view [url=https://sisksjet.github.io/SisksEnvironmentComplete/] here[/url]
+
+You can customize your skybox with my [url=https://steamcommunity.com/workshop/filedetails/?id=1380376642] Enviroment Collection [/url].
+It includes Skybox, Sun and Environment as seperate mods. They can be combined so that you can build your Skybox to your liking.
+
+If you have some suggestions or know how to fix some of my issues then let me know in the comments below.
+I always wanted to say that 😄
+
+[h1][b]F⠀E⠀A⠀T⠀U⠀R⠀E⠀S[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[list]
+[*] Dark skybox with purple nebula in 4K
+[*] Custom sun rays and lense flare
+[*] Reduces and modified "screen dirt"
+[*] Darker dark sides
+[*] Improved directional light and shadows
+[*] Less Bloom
+[/list]
+
+[h1][b]T⠀O⠀D⠀O[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[list]
+[*] Reduce or remove "colored atmospheric fog" between dark and lighten side of planets
+[/list]
+
+[h1][b]➤⠀C⠀R⠀E⠀D⠀I⠀T⠀S[/b][/H1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+A big thanks to [url=https://steamcommunity.com/id/hunterdigi/myworkshopfiles/?appid=244850&sort=score&browsefilter=myfiles&view=imagewall] Digi[/url] for pointing out the profiler build.
+
+[h1][b]➤⠀S⠀U⠀P⠀P⠀O⠀R⠀T[/b][/H1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[img]https://steamuserimages-a.akamaihd.net/ugc/949586220823602248/339F6748C4155B2EC3EDD33FDAF04F1B12A4A500/[/img][url=https://steamcommunity.com/id/sisksjet/myworkshopfiles/?appid=244850][img]https://steamuserimages-a.akamaihd.net/ugc/949586220823603246/BA1A8E6272BE3863194FEDB79F68D3DEACBE0837/[/img][/url][url=https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BUABNQCJ59CG][img]https://steamuserimages-a.akamaihd.net/ugc/949586220823604755/9492C8834824BCC7FE9EEACAD803F8BA99854E05/[/img][/url]
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+[h1][b]I⠀N⠀F⠀O[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+Dies is mein Environment-Komplettpaket mit einer dunklen Sky box mit lila Nebel, modifizierter Umgebungsbeleuchtung und benutzerdefinierten Sonnenstrahlen und Lens Flares.
+Ich habe eine Galerie zum Vergleich erstellt, die ihr euch  [url=https://sisksjet.github.io/SisksEnvironmentComplete/] hier[/url] anschauen könnt.
+
+Du kannst deine Skybox mit meiner [url=https://steamcommunity.com/workshop/filedetails/?id=1380376642] Enviroment Collection [/url] anpassen.
+Sie enthält Skybox, Sun und Environment als separate Mods. Sie können kombiniert werden, sodass du deine Skybox nach deinen Wünschen bauen kannst.
+
+Wenn ihr Vorschläge habt oder wisst, wie man dinge aus meiner Todo liste löst, lasst mir ein Kommentar da.
+
+[h1][b]F⠀E⠀A⠀T⠀U⠀R⠀E⠀S[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[list]
+[*] Dunkle Sky Box mit lila Nebel in 4K
+[*] Benutzerdefinierte Sonnenstrahlen und Lens Flares
+[*] Reduzierter und modifizierter "Bildschirm Schmutz"
+[*] Dunklere dunkle Seiten
+[*] Verbesserte gerichtete Lichtquellen und Schatten
+[*] Weniger Bloom
+[/list]
+
+[h1][b]T⠀O⠀D⠀O[/b][/h1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[list]
+[*] Verringere oder entferne den "farbigen atmosphärischer Nebel" zwichen der dunklen und hellen Seite der Planeten
+[/list]
+
+[h1][b]➤⠀C⠀R⠀E⠀D⠀I⠀T⠀S[/b][/H1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+Ein großes Dankeschön geht an [url=https://steamcommunity.com/id/hunterdigi/myworkshopfiles/?appid=244850&sort=score&browsefilter=myfiles&view=imagewall] Digi[/url] für den Hinweis auf den Profiler-Build.
+
+[h1][b]➤⠀S⠀U⠀P⠀P⠀O⠀R⠀T[/b][/H1]
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬⠀▬▬▬⠀▬▬⠀▬
+[img]https://steamuserimages-a.akamaihd.net/ugc/949586220823602248/339F6748C4155B2EC3EDD33FDAF04F1B12A4A500/[/img][url=https://steamcommunity.com/id/sisksjet/myworkshopfiles/?appid=244850][img]https://steamuserimages-a.akamaihd.net/ugc/949586220823603246/BA1A8E6272BE3863194FEDB79F68D3DEACBE0837/[/img][/url][url=https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4BUABNQCJ59CG][img]https://steamuserimages-a.akamaihd.net/ugc/949586220823604755/9492C8834824BCC7FE9EEACAD803F8BA99854E05/[/img][/url]
