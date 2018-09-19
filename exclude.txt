@@ -4,9 +4,10 @@
 \bin
 \obj
 \Properties
+\packages
 
-\IngameScripts
 \Source
+\Original
 
 .csproj
 .git
