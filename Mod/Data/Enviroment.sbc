@@ -83,6 +83,7 @@
 
     <ShadowSettings>
       <Data>
+        <UpdateCascadesEveryFrame>true</UpdateCascadesEveryFrame>
         <ShadowCascadeMaxDistance>20000</ShadowCascadeMaxDistance>
         <ShadowCascadeSpreadFactor>0.085</ShadowCascadeSpreadFactor>
         <ShadowCascadeZOffset>50000</ShadowCascadeZOffset>
