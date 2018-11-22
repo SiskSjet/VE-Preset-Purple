@@ -1,6 +1,6 @@
 # Sisk's Environment Complete
 
-![Space Engineers](https://img.shields.io/badge/Space%20Engineers-1.186.5-brightgreen.svg?longCache=true&style=flat-square)
+![Space Engineers](https://img.shields.io/badge/Space%20Engineers-1.188.1-brightgreen.svg?longCache=true&style=flat-square)
 
 ![Example Screenshot](Mod/thumb.png)
 
