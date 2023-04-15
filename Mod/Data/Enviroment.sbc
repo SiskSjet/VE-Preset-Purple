@@ -13,7 +13,7 @@
     </PlanetProperties>
 
     <SunProperties>
-      <SunIntensity>40</SunIntensity>
+      <SunIntensity>60</SunIntensity>
       <EnvironmentProbe>
         <TimeOut>0</TimeOut>
         <DrawDistance>100</DrawDistance>
@@ -62,7 +62,7 @@
         <BloomDirtRatio>0.56</BloomDirtRatio>
 
         <EyeAdaptationSpeedUp>0.586</EyeAdaptationSpeedUp>
-        <EyeAdaptationSpeedDown>0.365</EyeAdaptationSpeedDown>
+        <EyeAdaptationSpeedDown>4.365</EyeAdaptationSpeedDown>
       </Data>
     </PostProcessSettings>
 

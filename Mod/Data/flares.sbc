@@ -201,13 +201,13 @@
             <Y>27000</Y>
           </Size>
 
-          <ScreenIntensityMultiplierCenter>3</ScreenIntensityMultiplierCenter>
-          <ScreenIntensityMultiplierEdge>3</ScreenIntensityMultiplierEdge>
+          <ScreenIntensityMultiplierCenter>1</ScreenIntensityMultiplierCenter>
+          <ScreenIntensityMultiplierEdge>1</ScreenIntensityMultiplierEdge>
 
           <OcclusionToIntensityCurve>
             <KeyPoint>
               <Occlusion>0</Occlusion>
-              <Intensity>1</Intensity>
+              <Intensity>7</Intensity>
             </KeyPoint>
             <KeyPoint>
               <Occlusion>0.5</Occlusion>
