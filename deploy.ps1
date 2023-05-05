@@ -50,6 +50,31 @@ function ConvertTo-Acronym {
     $acronym
 }
 
+function Run-Robocopy {
+    param (
+        [string]$SourceDirectory,
+        [string]$DestinationDirectory,
+        [string]$xdList,
+        [string]$xfList
+    )
+
+    # Run Robocopy command and capture exit code
+    & robocopy $SourceDirectory $DestinationDirectory /MIR /Z /MT:8 /XJD /FFT /XD $xdList /XF $xfList /NDL /NFL /NJH /NJS /NS /NC /NP 2>&1 > $null
+
+    $exitCode = $LASTEXITCODE
+
+    # Check exit code and display status
+    switch ($exitCode) {
+        0 { Write-Warning "No files were copied, no failure occurred." }
+        1 { Write-Host "All files were copied successfully." }
+        2 { Write-Warning "Some extra files or directories were detected. No files were copied or the files were skipped." }
+        3 { Write-Warning "Some files were copied. Additional files were present, but not copied due to failure to verify." }
+        4 { Write-Error "Some files or directories were not copied due to an error." }
+        5 { Write-Error "Retry limit exceeded or some files were skipped due to security settings." }
+        default { Write-Error "Robocopy failed with exit code $exitCode." }
+    }
+}
+
 # Set current working directory to the directory of the script
 Set-Location $PSScriptRoot
 
@@ -63,8 +88,7 @@ $modName = (Get-Item $PSScriptRoot).Name
 if ($env -eq "dev") {
     $modName = ConvertTo-Acronym $modName
     $modName += "_DEV"
-}
-elseif ($env -eq "beta") {
+} elseif ($env -eq "beta") {
     $modName += "(BETA)"
 }
 
@@ -94,6 +118,12 @@ if ([string]::IsNullOrWhiteSpace($scriptsDirectory)) {
 $seModPath = Join-Path $seModsDirectory $modName
 $seModScripts = Join-Path $seModPath "Data\Scripts\$seModNamespace"
 
+Write-Host "=============================================================="
+Write-Host " Name  : $modName"
+Write-Host " Source: $PSScriptRoot"
+Write-Host " Dest  : $seModPath"
+Write-Host "=============================================================="
+
 # Check if exclude.txt exists
 $excludeFile = Join-Path $PSScriptRoot "exclude.txt"
 if (-not (Test-Path $excludeFile)) {
@@ -109,8 +139,7 @@ $excludeList = Get-Content $excludeFile | ForEach-Object {
         $rule = $_.Trim()
         if ($rule.EndsWith("\") -or $rule.EndsWith("/")) {
             "/XD $($rule.TrimEnd("/\"))"
-        }
-        else {
+        } else {
             "/XF $rule"
         }
     }
@@ -121,7 +150,8 @@ $xdList = ($excludeList -split "`r`n" | Where-Object {$_ -match "/XD"}) -replace
 $xfList = ($excludeList -split "`r`n" | Where-Object {$_ -match "/XF"}) -replace "/XF ",""
 
 # Call robocopy to mirror the Mod directory to the SE mod path, excluding files and folders listed in exclude.txt
-& robocopy $modDirectory $seModPath /MIR /Z /MT:8 /XJD /FFT /XD $xdList /XF $xfList /NC /NDL /NFL /NP /NS
+Write-Host "Copying mod files"
+Run-Robocopy -SourceDirectory $modDirectory -DestinationDirectory $seModPath -xdList $xdList -xfList $xfList
 
 if ($env -eq "dev" -or $env -eq "beta") {
     # Delete modinfo.sbmi file if it exists
@@ -139,7 +169,8 @@ if ($env -eq "dev" -or $env -eq "beta") {
 
 # Call robocopy to copy Scripts directory to SE mod Scripts directory
 if (Test-Path $scriptsDirectory) {
-    & robocopy $scriptsDirectory $seModScripts /MIR /Z /MT:8 /XJD /FFT /XD $xdList /XF $xfList /NC /NDL /NFL /NP /NS
+    Write-Host "Copying scripts"
+    Run-Robocopy -SourceDirectory $modDirectory -DestinationDirectory $seModPath -xdList $xdList -xfList $xfList
 
     # Set path to Scripts.csproj
     $csprojPath = Join-Path $scriptsDirectory "Scripts.csproj"
@@ -182,7 +213,8 @@ if (Test-Path $scriptsDirectory) {
         $destinationDirectory = Join-Path $seModScripts $baseFolder $reference.Name
         Write-Host "Copying $projectDirectory to $destinationDirectory"
         # Copy-Item "$projectDirectory\*" $destinationDirectory -Recurse -Force -Exclude "obj","bin"
-        & robocopy $projectDirectory $destinationDirectory /MIR /Z /MT:8 /XJD /FFT /XD $xdList /XF $xfList /NC /NDL /NFL /NP /NS
+        Write-Host "Copying $projectDirectory\*"
+        Run-Robocopy -SourceDirectory $modDirectory -DestinationDirectory $seModPath -xdList $xdList -xfList $xfList
     }
 }
 
@@ -197,29 +229,17 @@ if (Test-Path $artifactDirectory -PathType Container) {
         if (Get-Command 7z -ErrorAction SilentlyContinue) {
             # Update the zip file using 7-Zip
             & 7z u -up0q0r2x2y2z1w2 "$artifact" "$seModPath"
-        }
-        else {
+
+            if (Get-Command gitversion -ErrorAction SilentlyContinue){
+                $semver = & gitversion /showvariable SemVer
+                Rename-Item $artifact "$modName.$semver.zip"
+            }
+        } else {
             Write-Error "7-Zip is not installed"
         }
-    }
-    else {
+    } else {
         Write-Warning "No zip files found in $artifactDirectory"
     }
-
-    # # Generate version number using GitVersion
-    # $gitVersion = & GitVersion /output buildserver /showvariable SemVer
-
-    # # Check if GitVersion was successful
-    # if ($LASTEXITCODE -ne 0) {
-    #     Write-Error "GitVersion failed"
-    #     return
-    # }
-
-    # # Rename artifact file with version number
-    # $newName = "$modName.$gitVersion.zip"
-    # $newPath = Join-Path $artifactDirectory $newName
-    # Rename-Item $artifact.FullName $newPath -Force
-}
-else {
+} else {
     Write-Warning "Artifact directory $artifactDirectory does not exist"
 }
