@@ -13,7 +13,7 @@
     </PlanetProperties>
 
     <SunProperties>
-      <SunIntensity>60</SunIntensity>
+      <SunIntensity>160</SunIntensity>
       <EnvironmentProbe>
         <TimeOut>0</TimeOut>
         <DrawDistance>100</DrawDistance>
@@ -40,7 +40,7 @@
         <AmbientRadius>40.0</AmbientRadius>
         <ForwardDimDistance>7.816</ForwardDimDistance>
 
-        <SunDiscIntensity>0</SunDiscIntensity>
+        <SunDiscIntensity>2.8</SunDiscIntensity>
       </EnvironmentLight>
       <TextureMultipliers>
           <GlossMultiplier>0.9</GlossMultiplier>
@@ -62,7 +62,7 @@
         <BloomDirtRatio>0.56</BloomDirtRatio>
 
         <EyeAdaptationSpeedUp>0.586</EyeAdaptationSpeedUp>
-        <EyeAdaptationSpeedDown>4.365</EyeAdaptationSpeedDown>
+        <EyeAdaptationSpeedDown>0.365</EyeAdaptationSpeedDown>
       </Data>
     </PostProcessSettings>
 

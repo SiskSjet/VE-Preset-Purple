@@ -6,7 +6,7 @@
         <TypeId>FlareDefinition</TypeId>
         <SubtypeId>Sun</SubtypeId>
       </Id>
-      <Intensity>2.5</Intensity>
+      <Intensity>5.5</Intensity>
       <SubGlares>
         <!-- 1. Yellowish Ray -->
         <SubGlare>
