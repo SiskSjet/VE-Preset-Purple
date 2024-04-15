@@ -54,8 +54,8 @@ function Run-Robocopy {
     param (
         [string]$SourceDirectory,
         [string]$DestinationDirectory,
-        [string]$xdList,
-        [string]$xfList
+        $xdList,
+        $xfList
     )
 
     # Run Robocopy command and capture exit code
@@ -170,7 +170,7 @@ if ($env -eq "dev" -or $env -eq "beta") {
 # Call robocopy to copy Scripts directory to SE mod Scripts directory
 if (Test-Path $scriptsDirectory) {
     Write-Host "Copying scripts"
-    Run-Robocopy -SourceDirectory $modDirectory -DestinationDirectory $seModPath -xdList $xdList -xfList $xfList
+    Run-Robocopy -SourceDirectory $scriptsDirectory -DestinationDirectory $seModScripts -xdList $xdList -xfList $xfList
 
     # Set path to Scripts.csproj
     $csprojPath = Join-Path $scriptsDirectory "Scripts.csproj"
@@ -187,7 +187,13 @@ if (Test-Path $scriptsDirectory) {
         $sourcePath = Join-Path $scriptsDirectory $file.Include
 
         # Get destination path
-        $destinationPath = Join-Path $seModScripts $file.Link
+        $destinationPath = Join-Path $seModScripts $file.Link        
+        $destinationFolder = Split-Path $destinationPath -Parent
+
+        # Create the artifact directory if it doesn't exist
+        if (!(Test-Path $destinationFolder -PathType Container)) {
+            New-Item -ItemType Directory -Path $destinationFolder | Out-Null
+        }
 
         # Copy file to destination path
         Copy-Item $sourcePath $destinationPath -Force
@@ -210,11 +216,22 @@ if (Test-Path $scriptsDirectory) {
 
         # Copy all files from project directory to SE mod Scripts directory
         $projectDirectory = Split-Path $projectPath
-        $destinationDirectory = Join-Path $seModScripts $baseFolder $reference.Name
+
+        $name = ""
+        # check if $reference.Name is ProjectReference
+        if ($reference.Name -eq "ProjectReference") {
+            # get name from $reference.Include file name without extension
+            $name = (Get-Item (Join-Path $scriptsDirectory $reference.Include)).BaseName
+        } else {
+            $name = $reference.Name
+        }
+
+        $destinationDirectory = Join-Path $seModScripts $baseFolder $name
+        Write-Host ""
         Write-Host "Copying $projectDirectory to $destinationDirectory"
         # Copy-Item "$projectDirectory\*" $destinationDirectory -Recurse -Force -Exclude "obj","bin"
         Write-Host "Copying $projectDirectory\*"
-        Run-Robocopy -SourceDirectory $modDirectory -DestinationDirectory $seModPath -xdList $xdList -xfList $xfList
+        Run-Robocopy -SourceDirectory $projectDirectory -DestinationDirectory $destinationDirectory -xdList $xdList -xfList $xfList
     }
 }
 
@@ -237,6 +254,7 @@ function Update-ZipFile {
 
         $artifact = Get-ChildItem -Path $ArtifactDirectory -Filter *.zip | Select-Object -First 1
         if ($artifact) {
+            Write-Host ""
             Write-Host "Updating artifact $($artifact.FullName)"
 
             # Check if 7-Zip is installed
@@ -252,6 +270,7 @@ function Update-ZipFile {
             $zipFileName = "$ModName.zip"
             $artifact = Join-Path $ArtifactDirectory $zipFileName
 
+            Write-Host ""
             Write-Host "Creating new artifact $ModName.zip"
 
             if (Get-Command 7z -ErrorAction SilentlyContinue) {
